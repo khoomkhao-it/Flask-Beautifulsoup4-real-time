@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Show Chart</title>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/Show.css') }}"/>
+        <script type=text/javascript src="{{url_for('static', filename='js/Chart.js') }}"></script>
+        <!--icon Browser--><link rel="icon" href="{{ url_for('static', filename='image/network.png') }}" type="image/gif" sizes="16x16">
+    </head>
+    <body>
+        <table id='headtable'>
+        <tr>
+        <td><img src='{{url_for('static', filename='image/KMUTNB_Logo.png')}}' height='150' width='150'/></td>
+        <td><img src='{{url_for('static', filename='image/checkhand.png')}}' height='100' width='200'/></td>
+        <td><img src='{{url_for('static', filename='image/NECTEC_Logo.png')}}' height='150' width='400'/></td>
+        </tr>
+        </table>
+        <h1 align='center'>Show.html</h1>
+    </body>
+    <script>
+
+    /*$(document).ready(function () {
+        function createtable(X){
+            html = "<table id='headtable'>"
+            html += "<tr>"
+            html +=   "<td><img src='{{url_for('static', filename='image/KMUTNB_Logo.png')}}' height='150' width='150'/></td>"
+            html +=   "<td><img src='{{url_for('static', filename='image/checkhand.png')}}' height='100' width='200'/></td>"
+            html +=   "<td><img src='{{url_for('static', filename='image/NECTEC_Logo.png')}}' height='150' width='400'/></td>"
+            html += "</tr>"
+            html +="</table>"
+            html += "<table align='center' id='Show'>"
+            for (var i=0; i<X.length; i++) {
+                html += "<tr><td><canvas id='" + i + "'></canvas></td></tr>";
+                if (i%3 == 2){
+                    html += "</tr>"
+                    html += "<tr>"
+                }
+            }
+            html+="</table>" 
+            document.body.innerHTML = html;
+        }*/
+        //---------------------------------------------------------------------------------------------------------------------------
+        /*var eventSource = new EventSource("/streamdata")
+        eventSource.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            var Data = (data.Data);
+            var NAME = (data.Name);
+            var Widget = (data.Widget);
+            createtable(Data);             
+            for (var i=0; i<Data.length; i++) {
+                if (Data[i] === 'null'){
+                    window.location.href = "/error";
+                }
+            }*/
+            //--------------------------------------------------------------------------------------------------------------------------
+            /*for (var i=0; i<Data.length; i++){
+                //console.log("Widget : "+Widget[i]);
+                //console.log("i : "+i);
+                //console.log("Data["+i+"] : "+Data[i]);
+                //console.log("dataS[["+i+"]] : "+dataS[[i]]);
+                dataS[i] = dataS[i] || []
+                if (dataS[i].length === 5){
+                        dataS[i].shift();
+                        lables[i].shift();
+                }
+                dataS[i].push(Data[i]);//ใส่ค่าใน Array 2 มิติ
+                lables[i].push(data.Time);
+                //console.log(dataS);
+                //console.log(lables)
+                if (Widget[i] === ""){
+                    Lables1D = [].concat.apply([], lables[i]);
+                    Data1D = [].concat.apply([], dataS[i]);//.map(Number); แปลงจาก 2 มิติไปเป็น 1 มิติสำหรับแสดงกราฟ
+                    //newarray = newarray.map(Number); //แปลงจาก Array String To Array Number
+                    //document.getElementById(i).innerHTML = JSON.stringify(newarray);
+                    line(Data1D,Lables1D,i,NAME[i]);
+                }
+                else if (Widget[i] === "Line"){
+
+                }
+                else if (Widget[i] === "Donut"){
+
+                }
+                else if (Widget[i] === "Pie"){
+
+                }
+            }
+        };
+    });*/
+    </script>
+</html>

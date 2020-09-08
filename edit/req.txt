@@ -1,0 +1,38 @@
+python
+ -beautifulsoup4
+ -flask
+ -requests
+ -selenium
+**************run app.py for use
+txt for test
+url:https://th.investing.com/crypto/currencies
+name:BTC
+Tag:a
+Attribute:class
+Value:pid-1057391-last
+
+url:https://coinmarketcap.com/
+name:BTC
+Tag:a
+Attribute:href
+Value:/currencies/bitcoin/markets/
+Tag:a
+Attribute:href
+Value:/currencies/ethereum/markets/
+
+url:https://www.coingecko.com/en
+name:BTC
+Tag:span
+Attribute:data-coin-symbol
+Value:btc
+
+url:https://www.bitcoinprice.com/list/
+name:BTC
+Tag:td
+Attribute:id
+Value:BTC-price
+
+1.แก้การดัก Tag class ไว้หลังบ้าน (แก้ก่อน) / หน้า Main การตรวจ https-http
+2.แก้เก็บการเก็บข้อมูลก่อนไปแสดงค่า count ไปเรื่อยๆ (แก้ก่อน)*** การเก็บ Data ใน python และ JSON
+Data JSON --> Export *****สำคัญมาก*****
+3.ปรับ widget เป็น vue https://vue-chartjs.org/guide/#chart-with-api-data

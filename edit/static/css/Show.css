@@ -1,0 +1,22 @@
+body{
+    background-color:#da745dcb;
+}
+#headtable{
+    margin-left: auto;
+    margin-right: auto;
+}
+#Show {
+    border-collapse: collapse;
+}
+  
+/*#Show,.Show {
+    border: 2px solid black;
+}*/
+div {
+    font-size: 18px;
+    font-family: 'Muli';
+}
+canvas{
+    width:1000px !important;
+    height:600px !important;
+}

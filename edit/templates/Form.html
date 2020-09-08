@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Form</title>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/Form.css') }}"/>
+        <!--icon Browser--><link rel="icon" href="{{ url_for('static', filename='image/form.png') }}" type="image/gif" sizes="16x16">
+    </head>
+    <body>
+        <table>
+            <tr>
+               <td><img src="{{url_for('static', filename='image/KMUTNB_Logo.png')}}" height="150" width="150"/></td>
+               <td><img src="{{url_for('static', filename='image/checkhand.png')}}" height="100" width="200"/></td>
+               <td><img src="{{url_for('static', filename='image/NECTEC_Logo.png')}}" height="150" width="400"/></td>
+            </tr>
+         </table>
+        <form action="/form" method="post">
+            <div>
+                <div id="new_item" align="center"></div>
+                <div align="center">
+                <button id="add_item" type="button">Add Item</button>
+                <button id="Submit" type="submit" value="Submit" disabled>Submit</button>
+                </div>
+            </div>
+        </form>
+        <script>
+                var count = 0;
+                $("#add_item").on("click", function(){
+                    count += 1;
+                    var html = '';
+                    html += '<div id="InputForm">';
+                    html += '<div class="input">';
+                    html += '<input type="text" name="Name'+ count +'" placeholder="Name'+ count +'" pattern="^[A-Za-zก-๛_]+$" title="Please input _ for space." required>';
+                    html += '<input type="text" name="Tag'+ count +'" placeholder="Tag'+ count +'" pattern="^[A-Za-z]+$" title="Please input only english." size=5 required>';
+                    html += '<input type="text" name="Attribute'+ count +'" placeholder="Attribute'+ count +'" pattern="^[A-Za-z?-/]+$" title="Please input only english." required>';
+                    html += '<input type="text" name="Value'+ count +'" placeholder="Value'+ count +' in Attribute" pattern="^[a-zA-Z0-9?-_/]+$" title="Please input only English and Number." required>';
+                    /*Select Widget*/
+                    html += '&nbsp;<select name="Widget'+ count +'">'
+                    html +=   '<option value="">Text</option>'
+                    html +=   '<option value="Line">Line Chart</option>'
+                    html +=   '<option value="Donut">Donut Chart</option>'
+                    html +=   '<option value="Pie">Pie Chart</option>'
+                    html += '</select>&nbsp;'
+                    html += '<button id="remove_item" type="button" class="btn btn-danger">Remove</button>';
+                    html += '</div>';
+                    html += '</div>'
+                    document.getElementById("Submit").disabled = false;
+                    $('#new_item').append(html)
+                });
+                $(document).on('click', '#remove_item', function () {
+                    $(this).closest('#InputForm').remove();
+                });
+        </script>
+    </body>
+</html>

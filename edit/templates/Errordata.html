@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Error</title>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/Error.css') }}"/>
+        <!--icon Browser--><link rel="icon" href="{{ url_for('static', filename='image/error.png') }}" type="image/gif" sizes="16x16">
+    </head>
+    <body>
+        <form action="/back" align="center">
+            <h1>Can't Get Data.Please check Tag, Attribute or Value.</h1>
+            <input type="submit" value="Back">
+        </form>
+    </body>
+</html>
